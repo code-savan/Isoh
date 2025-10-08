@@ -15,6 +15,10 @@ const poppins = Poppins({
 export const metadata = {
   title: "P.A. ISOH LEGAL CONSULTANTS | Precious Amaka Isoh",
   description: "Professional legal services by Precious Amaka Isoh. Expert legal consultation and representation for individuals and businesses.",
+  image: "/logo.png",
+  icons: {
+    icon: "/logo.png",
+  },
   keywords: "lawyer, legal consultant, legal services, Precious Amaka Isoh, P.A. ISOH LEGAL CONSULTANTS",
   authors: [{ name: "Precious Amaka Isoh" }],
   openGraph: {
