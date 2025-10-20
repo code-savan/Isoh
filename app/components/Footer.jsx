@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { fadeInUp, staggerContainer } from "./motion";
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, ArrowUp } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, ArrowUp, ArrowRight } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -48,10 +48,13 @@ export default function Footer() {
               <a href="#" className="hover:underline">Associate Placement</a><br />
               <a href="#" className="hover:underline">Consulting Services</a>
             </motion.div>
-            <motion.div className="text-sm space-y-2 text-white/70" variants={fadeInUp}>
-              <div className="font-semibold text-white">In‑House Legal</div>
-              <a href="#" className="hover:underline">General Counsel Search</a><br />
-              <a href="#" className="hover:underline">Legal Counsel Search</a>
+            <motion.div variants={fadeInUp}>
+              <a
+                href="https://wa.link/8knayl"
+                className="inline-flex items-center gap-2 rounded-full bg-white text-black h-12 px-6 text-sm font-medium shadow hover:opacity-90 transition"
+              >
+                Reach out <ArrowRight size={16} />
+              </a>
             </motion.div>
           </div>
         </motion.div>
@@ -69,7 +72,7 @@ export default function Footer() {
             P.A. Isoh Legal Consultants is a Nigeria‑based law firm providing dispute resolution, compliance, IP, filings, and real estate services. Our reputation is built on results and referrals.
           </motion.p>
           <motion.ul className="space-y-3 text-sm text-white/90" variants={fadeInUp}>
-            <li className="flex items-center gap-3 font-semibold"><Phone size={16} /> +234-816-306-6508</li>
+            <li className="flex items-center gap-3 font-semibold"><Phone size={16} /> <a href="https://wa.link/8knayl"> +234-816-306-6508</a></li>
             <li className="flex items-center gap-3 font-semibold"><Mail size={16} /> Isohprecious99@gmail.com</li>
             <li className="flex items-center gap-3 font-semibold"><MapPin size={16} /> Kingfem Plaza, Mabushi, FCT, Abuja</li>
           </motion.ul>
@@ -86,8 +89,8 @@ export default function Footer() {
         <div className="max-w-[1200px] mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
           <div className="opacity-70 font-semibold">Copyright © {new Date().getFullYear()} P.A. ISOH LEGAL CONSULTANTS</div>
           <div className="flex items-center gap-6 opacity-80">
-            <a href="#" className="hover:underline">Privacy Policy</a>
-            <a href="#" className="hover:underline">Terms of Service</a>
+            <a href="/privacy-policy" className="hover:underline">Privacy Policy</a>
+            <a href="/terms-and-conditions" className="hover:underline">Terms of Service</a>
             {/* <a href="#" className="hover:underline">Cookie Settings</a> */}
           </div>
           <a href="#top" className="flex items-center gap-2 font-semibold"><span>Back to Top</span><ArrowUp size={16} /></a>

@@ -39,7 +39,7 @@ export default function Hero() {
             View Cases <ArrowRight className="w-4 h-4" />
           </a>
           <a
-            href="#contact"
+            href="https://wa.link/8knayl"
             className="inline-flex items-center justify-center rounded-full border border-[#1e1a16] px-6 py-3 text-[13px]  text-[#1e1a16] transition font-medium"
           >
             Get Started

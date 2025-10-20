@@ -32,7 +32,7 @@ export default function Team() {
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <div className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-sm">
               <Award size={16} />
-              <span>12+ Years Experience</span>
+              <span>3+ Years Experience</span>
             </div>
             <div className="inline-flex items-center gap-2 rounded-full bg-black/5 px-4 py-2 text-sm">
               <Users size={16} />
@@ -40,7 +40,7 @@ export default function Team() {
             </div>
           </div>
           <a
-            href="#contact"
+            href="https://wa.link/8knayl"
             className="inline-flex items-center gap-2 rounded-full bg-black text-white px-5 py-3 text-sm font-medium hover:opacity-90 transition"
           >
             <Calendar size={16} /> Book a Consultation

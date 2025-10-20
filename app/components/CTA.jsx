@@ -57,7 +57,7 @@ export default function CTA() {
             </div>
             <motion.div variants={fadeInUp}>
               <a
-                href="#contact"
+                href="https://wa.link/8knayl"
                 className="inline-flex items-center gap-2 rounded-full bg-white text-black h-12 px-6 text-sm font-medium shadow hover:opacity-90 transition"
               >
                 Schedule Now <ArrowRight size={16} />

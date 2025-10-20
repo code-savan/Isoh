@@ -47,7 +47,7 @@ export default function About() {
             </div>
             <div className="flex flex-col items-start justify-center">
               <div className="text-xs tracking-wide text-[#201c17] font-semibold">YEARS OF EXPERIENCE</div>
-              <div className="text-2xl font-semibold">12+</div>
+              <div className="text-2xl font-semibold">3+</div>
             </div>
           </div>
           <div className="rounded-[16px] bg-white/90 text-black px-4 py-3 flex items-center gap-4 shadow-[0_4px_0_#0000001a]">
@@ -56,7 +56,7 @@ export default function About() {
             </div>
             <div className="flex flex-col items-start justify-center">
               <div className="text-xs tracking-wide text-[#201c17] font-semibold">TEAM MEMBERS</div>
-              <div className="text-2xl font-semibold">19</div>
+              <div className="text-2xl font-semibold">5</div>
             </div>
           </div>
         </motion.div>

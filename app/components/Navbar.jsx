@@ -20,7 +20,7 @@ export default function Navbar() {
         <div className="w-1/5 flex justify-end">
 {/* Amaka;s Bookclub */}
         <a className="inline-flex items-center justify-center rounded-full bg-[#1e1a16] text-white px-4 py-3 text-xs sm:text-base hover:opacity-90 transition gap-2 "
-             href="#portfolio"
+             href="/penwrites-creatives"
           >
             <PenTool className="w-3 h-3" />
             <span className="text-[10px] font-semibold tracking-wide">PENWRITES CREATIVES</span>
