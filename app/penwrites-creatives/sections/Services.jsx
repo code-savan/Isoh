@@ -1,4 +1,7 @@
+"use client";
 import { Briefcase, GraduationCap, FileText, Presentation, ClipboardList, FlaskConical, IdCard, UserRound, Building2, Palette, ChevronRight } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '@/app/components/motion'
 
 const services = [
   { title: 'Business Proposal', icon: Briefcase, desc: 'Persuasive, tailored proposals that communicate goals, strategies and financial plans.' },
@@ -25,10 +28,10 @@ export default function Services() {
           Business Proposal, Academic Projects, Content Writing, Pitch Deck, Business Plan, Research Project, CVs & Cover letters,
           Personal Statement, Corporate Filing and Licensing, and more.
         </p> */}
-        <div className="mt-8 rounded-2xl border border-[#6b4f3a]/20 bg-white/70 backdrop-blur-sm">
+        <motion.div className="mt-8 rounded-2xl border border-[#6b4f3a]/20 bg-white/70 backdrop-blur-sm" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
           <ul className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#6b4f3a]/15">
             {services.map((s) => (
-              <li key={s.title} className="group">
+              <motion.li key={s.title} className="group" variants={fadeInUp}>
                 <div className="flex items-start gap-4 p-5 sm:p-6 transition-colors duration-200 hover:bg-[#6b4f3a]/5">
                   <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#6b4f3a]/10 text-[#6b4f3a] flex-shrink-0">
                     <s.icon className="h-5 w-5" />
@@ -43,10 +46,10 @@ export default function Services() {
                     </p>
                   </div>
                 </div>
-              </li>
+              </motion.li>
             ))}
           </ul>
-        </div>
+        </motion.div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
           <div className="rounded-xl bg-white/70 border border-[#6b4f3a]/20 p-4">

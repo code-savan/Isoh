@@ -1,12 +1,16 @@
+"use client";
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '@/app/components/motion'
+
 export default function Founder() {
   return (
     <section id="founder" className="scroll-mt-24">
       <div className="mx-auto max-w-[1200px] px-4 py-20">
-        <div className="grid grid-cols-1 md:grid-cols-[360px_1fr] gap-10 items-center">
-          <div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-sm border border-[#6b4f3a]/20 bg-white/70">
+        <motion.div className="grid grid-cols-1 md:grid-cols-[360px_1fr] gap-10 items-center" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.25 }}>
+          <motion.div className="relative aspect-[4/5] rounded-2xl overflow-hidden shadow-sm border border-[#6b4f3a]/20 bg-white/70" variants={fadeInUp}>
             <img src="/founder.jpeg" alt="Founder portrait" className="h-full w-full object-cover" />
-          </div>
-          <div>
+          </motion.div>
+          <motion.div variants={fadeInUp}>
             <div className="text-[11px] uppercase tracking-[0.25em] text-[#6b4f3a]">Our Founder</div>
             <h2 className="mt-2 text-[32px] sm:text-[40px] font-heading font-semibold text-[#2b2a27]">Precious Amaka Isoh</h2>
             <p className="mt-4 text-sm leading-relaxed max-w-2xl text-black/70">
@@ -42,8 +46,8 @@ across a variety of legal and professional fields.
                 <div className="text-xs opacity-70">Quality</div>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   )

@@ -1,4 +1,7 @@
+"use client";
 import { Star } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '@/app/components/motion'
 
 const testimonials = [
   { name: 'Francis Okoye Odinikpo', quote: 'Penwrites Creatives is very reliable and works hard to meet up with deadlines' },
@@ -15,9 +18,9 @@ export default function Testimonial() {
           <h2 className="mt-2 text-[36px] sm:text-[44px] font-heading font-semibold text-[#2b2a27]">Client’s feedback</h2>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <motion.div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6" variants={staggerContainer} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
           {testimonials.map((t) => (
-            <figure key={t.name} className="border border-[#6b4f3a]/20 rounded-xl p-6 bg-white/80 backdrop-blur-sm">
+            <motion.figure key={t.name} className="border border-[#6b4f3a]/20 rounded-xl p-6 bg-white/80 backdrop-blur-sm" variants={fadeInUp}>
               <div className="flex items-center gap-1 text-[#eab308]">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" />
@@ -25,9 +28,9 @@ export default function Testimonial() {
               </div>
               <blockquote className="mt-4 text-sm leading-relaxed">“{t.quote}”</blockquote>
               <figcaption className="mt-4 text-sm font-medium">{t.name}</figcaption>
-            </figure>
+            </motion.figure>
           ))}
-        </div>
+        </motion.div>
 
         <div className="mt-10 flex items-center justify-center gap-2">
           <span className="h-2 w-2 rounded-full bg-[#6b4f3a]/30" />

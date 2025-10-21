@@ -2,6 +2,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowLeft, PenTool, BookOpenText, ScrollText, Users, Box, AtSign, Workflow, PenBox, User } from 'lucide-react'
+import { motion } from 'framer-motion'
+import { fadeInUp, staggerContainer } from '@/app/components/motion'
 
 export default function Hero() {
   return (
@@ -23,28 +25,33 @@ export default function Hero() {
       </Link>
 
       <div className="relative z-10 mx-auto max-w-[1200px] px-4 py-24 min-h-screen flex items-center">
-        <div>
-          <p className="text-xs uppercase tracking-[0.25em] text-white/80 inline-flex items-center gap-2">
+        <motion.div
+          variants={staggerContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+        >
+          <motion.p className="text-xs uppercase tracking-[0.25em] text-white/80 inline-flex items-center gap-2" variants={fadeInUp}>
             <PenTool className="h-4 w-4" /> PENWRITES CREATIVES
-          </p>
-          <h1 className="mt-4 text-white font-heading font-extrabold tracking-tight text-[44px] sm:text-[64px] md:text-[72px] leading-[1.1] max-w-4xl">
+          </motion.p>
+          <motion.h1 className="mt-4 text-white font-heading font-extrabold tracking-tight text-[44px] sm:text-[64px] md:text-[72px] leading-[1.1] max-w-4xl" variants={fadeInUp}>
             BUSINESS PORTFOLIO
-          </h1>
-          <p className="mt-5 max-w-2xl text-white/95 text-base leading-relaxed">
+          </motion.h1>
+          <motion.p className="mt-5 max-w-2xl text-white/95 text-base leading-relaxed" variants={fadeInUp}>
             Academic and professional writing consultancy delivering structure, precision and professionalism.
-          </p>
+          </motion.p>
 
-          <nav aria-label="Table of contents" className="mt-10">
+          <motion.nav aria-label="Table of contents" className="mt-10" variants={fadeInUp}>
             <ul className="flex flex-wrap gap-5 text-[12px] text-white/90">
               <li className="inline-flex items-center gap-1"><Users className="h-4 w-4" /><a href="#about" className="underline-offset-4 hover:underline">About us</a></li>
               <li className="inline-flex items-center gap-1"><User className="h-4 w-4" /><a href="#founder" className="underline-offset-4 hover:underline">Our Founder</a></li>
               <li className="inline-flex items-center gap-1"><PenBox className="h-4 w-4" /><a href="#services" className="underline-offset-4 hover:underline">Services offered</a></li>
-              <li className="inline-flex items-center gap-1"><Box className="h-4 w-4" /><a href="#testimonials" className="underline-offset-4 hover:underline">Testimonial</a></li>
+              <li className="inline-flex items-center gap-1"><Box className="h-4 w-4" /><a href="#testimonials" className="underline-offset-4 hover:underline">Testimonials</a></li>
               <li className="inline-flex items-center gap-1"><AtSign className="h-4 w-4" /><a href="#contact" className="underline-offset-4 hover:underline">Contact information</a></li>
               {/* <li className="inline-flex items-center gap-1"><ScrollText className="h-4 w-4" /><a href="#conclusion" className="underline-offset-4 hover:underline">Conclusion</a></li> */}
             </ul>
-          </nav>
-        </div>
+          </motion.nav>
+        </motion.div>
       </div>
     </section>
   )
