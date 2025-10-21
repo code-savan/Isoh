@@ -34,7 +34,7 @@ across a variety of legal and professional fields.
                 <div className="text-xs opacity-70">Experience</div>
               </div>
               <div className="rounded-xl bg-white/70 border border-[#6b4f3a]/20 p-4">
-                <div className="text-[22px] font-semibold">250+</div>
+                <div className="text-[22px] font-semibold">25+</div>
                 <div className="text-xs opacity-70">Clients</div>
               </div>
               <div className="rounded-xl bg-white/70 border border-[#6b4f3a]/20 p-4">

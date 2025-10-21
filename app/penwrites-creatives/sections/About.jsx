@@ -4,8 +4,8 @@ export default function About() {
   return (
     <section id="about" className="scroll-mt-24">
       <div className="mx-auto max-w-[1200px] px-4 py-20">
-        <div className="flex gap-10 items-center">
-          <div className="relative w-2/6">
+        <div className="flex md:gap-10 items-center md:flex-row flex-col-reverse gap-3">
+          <div className="relative md:w-2/6 w-full">
             <div className="relative aspect-[1/1] rounded-[28px] overflow-hidden shadow-sm border border-[#6b4f3a]/20">
               <img src="https://images.unsplash.com/photo-1592693281996-fbff6b85041c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070" alt="Reading together" className="h-full w-full object-cover" />
             </div>
@@ -21,7 +21,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="w-4/6">
+          <div className="md:w-4/6 w-full">
             <div className="rounded-[28px] bg-white/70 p-6 sm:p-10">
               <div className="">
                 {/* <div className="inline-flex items-center gap-2 rounded-full bg-[#6b4f3a]/10 text-[#6b4f3a] px-3 py-1 text-[11px] uppercase tracking-[0.25em]">Who we are</div> */}
