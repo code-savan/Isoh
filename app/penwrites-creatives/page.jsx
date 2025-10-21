@@ -4,6 +4,7 @@ import About from './sections/About'
 import Founder from './sections/Founder'
 import Services from './sections/Services'
 import Testimonial from './sections/Testimonial'
+import BookClubCTA from './sections/BookClubCTA'
 import ContactInfo from './sections/ContactInfo'
 import Conclusion from './sections/Conclusion'
 
@@ -20,6 +21,7 @@ export default function PenwritesCreativesPage() {
       <Founder />
       <Services />
       <Testimonial />
+      <BookClubCTA />
       <ContactInfo />
       {/* <Conclusion /> */}
     </main>

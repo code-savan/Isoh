@@ -1,4 +1,4 @@
-import { Briefcase, GraduationCap, FileText, Presentation, ClipboardList, FlaskConical, IdCard, UserRound, Building2, Palette } from 'lucide-react'
+import { Briefcase, GraduationCap, FileText, Presentation, ClipboardList, FlaskConical, IdCard, UserRound, Building2, Palette, ChevronRight } from 'lucide-react'
 
 const services = [
   { title: 'Business Proposal', icon: Briefcase, desc: 'Persuasive, tailored proposals that communicate goals, strategies and financial plans.' },
@@ -25,16 +25,27 @@ export default function Services() {
           Business Proposal, Academic Projects, Content Writing, Pitch Deck, Business Plan, Research Project, CVs & Cover letters,
           Personal Statement, Corporate Filing and Licensing, and more.
         </p> */}
-        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {services.map((s) => (
-            <div key={s.title} className="border border-[#6b4f3a]/20 rounded-xl p-5 bg-white/70 backdrop-blur-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-sm">
-              <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#6b4f3a]/10 text-[#6b4f3a]">
-                <s.icon className="h-5 w-5" />
-              </div>
-              <h3 className="mt-3 text-base font-semibold">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed">{s.desc}</p>
-            </div>
-          ))}
+        <div className="mt-8 rounded-2xl border border-[#6b4f3a]/20 bg-white/70 backdrop-blur-sm">
+          <ul className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-[#6b4f3a]/15">
+            {services.map((s) => (
+              <li key={s.title} className="group">
+                <div className="flex items-start gap-4 p-5 sm:p-6 transition-colors duration-200 hover:bg-[#6b4f3a]/5">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-[#6b4f3a]/10 text-[#6b4f3a] flex-shrink-0">
+                    <s.icon className="h-5 w-5" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <h3 className="text-base font-semibold truncate">{s.title}</h3>
+                      <ChevronRight className="h-5 w-5 text-[#6b4f3a]/60 opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </div>
+                    <p className="mt-1 text-sm leading-relaxed text-black/70">
+                      {s.desc}
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-4 text-center">
