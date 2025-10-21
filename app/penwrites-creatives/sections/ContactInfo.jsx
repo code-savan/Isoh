@@ -37,7 +37,7 @@ export default function ContactInfo() {
         <div className="mt-8 w-full overflow-hidden rounded-xl border border-[#6b4f3a]/20 bg-white/60">
           <iframe
             title="Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d19801.842!2d-0.1276!3d51.5072!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sLondon!5e0!3m2!1sen!2suk!4v1610000000000"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126844.232!2d7.333!3d9.083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0a5b2e0b4f5d%3A0x2f8a5b1f4a5c7c!2sAbuja!5e0!3m2!1sen!2sNG!4v1700000000000"
             width="100%"
             height="360"
             style={{ border: 0 }}
