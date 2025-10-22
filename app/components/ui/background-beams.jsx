@@ -1,11 +1,26 @@
 "use client";
-import React from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
-export const BackgroundBeams = React.memo(({
-  className
-}) => {
+export const BackgroundBeams = React.memo(({ className, quality = "high" }) => {
+  const [enabled, setEnabled] = useState(false);
+
+  // Defer heavy SVG until idle and honor reduced motion
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduce) return; // disable completely for reduced motion
+
+    const schedule = (cb) =>
+      (window.requestIdleCallback ? window.requestIdleCallback(cb, { timeout: 1500 }) : setTimeout(cb, 700));
+    const id = schedule(() => setEnabled(true));
+    return () => {
+      if (typeof id === "number") clearTimeout(id);
+      else if (window.cancelIdleCallback) try { window.cancelIdleCallback(id); } catch {}
+    };
+  }, []);
+
   const paths = [
     "M-380 -189C-380 -189 -312 216 152 343C616 470 684 875 684 875",
     "M-373 -197C-373 -197 -305 208 159 335C623 462 691 867 691 867",
@@ -58,6 +73,13 @@ export const BackgroundBeams = React.memo(({
     "M-44 -573C-44 -573 24 -168 488 -41C952 86 1020 491 1020 491",
     "M-37 -581C-37 -581 31 -176 495 -49C959 78 1027 483 1027 483",
   ];
+
+  const renderPaths = useMemo(() => {
+    if (!enabled) return [];
+    if (quality === "low") return paths.filter((_, i) => i % 4 === 0); // ~25%
+    if (quality === "medium") return paths.filter((_, i) => i % 2 === 0); // ~50%
+    return paths;
+  }, [enabled, quality]);
   return (
     <div
       className={cn(
@@ -77,7 +99,7 @@ export const BackgroundBeams = React.memo(({
           strokeOpacity="0.05"
           strokeWidth="0.5"></path>
 
-        {paths.map((path, index) => (
+        {renderPaths.map((path, index) => (
           <motion.path
             key={`path-` + index}
             d={path}
@@ -86,7 +108,7 @@ export const BackgroundBeams = React.memo(({
             strokeWidth="0.5"></motion.path>
         ))}
         <defs>
-          {paths.map((path, index) => (
+          {renderPaths.map((path, index) => (
             <motion.linearGradient
               id={`linearGradient-${index}`}
               key={`gradient-${index}`}
@@ -103,7 +125,7 @@ export const BackgroundBeams = React.memo(({
                 y2: ["0%", `${93 + Math.random() * 8}%`],
               }}
               transition={{
-                duration: Math.random() * 10 + 10,
+                duration: Math.random() * 8 + 8,
                 ease: "easeInOut",
                 repeat: Infinity,
                 delay: Math.random() * 10,
