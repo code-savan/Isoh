@@ -49,7 +49,7 @@ const Hero = () => {
 
 
       <div className="relative min-h-[60vh] md:min-h-screen">
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 z-10 bg-[#2e1806] p-4 rounded-lg text-white shadow-md shadow-[#2f2014d2] w-[85%]">
+        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 md:left-10 md:translate-x-0 z-10 bg-[#2e1806] p-4 rounded-lg text-white shadow-md shadow-[#2f2014d2] w-[85%] md:w-fit">
         <motion.p className="mt-2 max-w-lg text-xs font-medium leading-relaxed text-white/90 backdrop-blur-xl" variants={fadeInUp} style={{ fontFamily: 'var(--font-poppins)' }}>
               A vibrant community for book lovers passionate about reading, meaningful conversations, and making positive impact. We connect readers locally and globally—online and in-person—to share lessons, emotions, and perspectives from diverse books.
             </motion.p>
